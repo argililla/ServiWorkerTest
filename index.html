@@ -5,14 +5,26 @@
     <meta charset="UTF-8">
     <title>Home Page</title>
     <script>
-        // Register the service worker
+        // // Register the service worker
+        // if ('serviceWorker' in navigator) {
+        //     navigator.serviceWorker.register('./service-worker.js').then(function (registration) {
+        //         // Registration was successful
+        //         console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        //     }).catch(function (err) {
+        //         // registration failed :(
+        //         console.log('ServiceWorker registration failed: ', err);
+        //     });
+        // }
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./service-worker.js').then(function (registration) {
-                // Registration was successful
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }).catch(function (err) {
-                // registration failed :(
-                console.log('ServiceWorker registration failed: ', err);
+            // we are checking here to see if the browser supports the  service worker api
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('./service-worker.js').then(function (registration) {
+                    // Registration was successful
+                    console.log('Service Worker registration was successful with scope: ', registration.scope);
+                }, function (err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                });
             });
         }
     </script>
@@ -28,7 +40,8 @@
         Usted está aquí:
     </p>
     <p>
-        <img src="./img/folder-horizontal.png" /> / index /
+        <img src="./img/folder-horizontal.png" /> / 
+        <b>index</b> /
         <a href="./subpage1.html">subpage1</a> /
         <a href="./subpage2.html">subpage2</a> /
         <a href="./subpage3.html">subpage3</a> /
