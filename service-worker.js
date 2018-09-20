@@ -1,23 +1,23 @@
 var CACHE_NAME = 'offline-page';
 var urlsToCache = [
-  '/',
-  '/index.html',
-  '/subpage1.html',
-  '/subpage2.html',
-  '/subpage3.html',
-  '/subpage4.html',
-  '/img/folder-horizontal.png',
-  '/img/mario.jpeg',
-  '/files/DocumentoPrueba1.pdf',
-  '/files/DocumentoPrueba2.pdf',
-  '/files/DocumentoPrueba3.pdf',
-  '/files/DocumentoPrueba4.pdf',
-  '/files/DocumentoPrueba5.pdf',
-  '/files/DocumentoPrueba6.pdf',
-  '/files/DocumentoPrueba7.pdf',
-  '/files/DocumentoPrueba8.pdf',
-  '/files/DocumentoPrueba9.pdf',
-  '/files/DocumentoPrueba10.pdf'
+  './',
+  './index.html',
+  './subpage1.html',
+  './subpage2.html',
+  './subpage3.html',
+  './subpage4.html',
+  './img/folder-horizontal.png',
+  './img/mario.jpeg',
+  './files/DocumentoPrueba1.pdf',
+  './files/DocumentoPrueba2.pdf',
+  './files/DocumentoPrueba3.pdf',
+  './files/DocumentoPrueba4.pdf',
+  './files/DocumentoPrueba5.pdf',
+  './files/DocumentoPrueba6.pdf',
+  './files/DocumentoPrueba7.pdf',
+  './files/DocumentoPrueba8.pdf',
+  './files/DocumentoPrueba9.pdf',
+  './files/DocumentoPrueba10.pdf'
 ];
 
 self.addEventListener('install', function(event) {
