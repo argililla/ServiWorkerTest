@@ -41,14 +41,25 @@ self.addEventListener('fetch', function(event) {
       caches.match(event.request)
         .then(function(response) {
           if (response) {
+            console.log('Found ', event.request.url, ' in cache');
             // if we are here, that means there's a match
             //return the response stored in browser
             return response;
-          }
-          // no match in cache, use the network instead
-          return fetch(event.request);
         }
-      )
+          // no match in cache, use the network instead
+          console.log('Network request for ', event.request.url);
+          return fetch(event.request).then(function(response){
+              if(response.status === 404) {
+                  console.log("page not founf: Error 404");
+              }
+            return caches.open(resourcesToCache).then(function(cache) {
+                cache.put(event.request.url, response.clone());
+                return response;
+            });
+          });
+        }).catch (function(error) {
+            console.log('Error', error);
+        })
     );
   });
 
