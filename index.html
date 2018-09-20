@@ -18,7 +18,7 @@
         if ('serviceWorker' in navigator) {
             // we are checking here to see if the browser supports the  service worker api
             window.addEventListener('load', function () {
-                navigator.serviceWorker.register(`${window.location.pathname}/service-worker.js`).then(function (registration) {
+                navigator.serviceWorker.register('./service-worker.js').then(function (registration) {
                     // Registration was successful
                     console.log('Service Worker registration was successful with scope: ', registration.scope);
                 }, function (err) {
@@ -41,7 +41,7 @@
     </p>
     <p>
         <img src="./img/folder-horizontal.png" /> / 
-        <b>index</b> /
+        <b>index /</b>
         <a href="./subpage1.html">subpage1</a> /
         <a href="./subpage2.html">subpage2</a> /
         <a href="./subpage3.html">subpage3</a> /
