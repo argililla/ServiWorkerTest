@@ -41,14 +41,14 @@
 
 var CACHE_NAME = 'offline-page';
 var urlsToCache = [
-  './',
-  './index.html',
-  './subpage1.html',
-  './subpage2.html',
-  './subpage3.html',
-  './subpage4.html',
-  './img/folder-horizontal.png',
-  './img/mario.jpeg',
+  '/',
+  '/index.html',
+  '/subpage1.html',
+  '/subpage2.html',
+  '/subpage3.html',
+  '/subpage4.html',
+  '/img/folder-horizontal.png',
+  '/img/mario.jpeg',
   '/files/DocumentoPrueba1.pdf',
   '/files/DocumentoPrueba2.pdf',
   '/files/DocumentoPrueba3.pdf',
