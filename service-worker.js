@@ -38,6 +38,7 @@ self.addEventListener('install', function (event) {
         return cache.addAll(resourcesToCache);
       })
   );
+      this.function.showSnackbarFilesCached();
 });
 
 self.addEventListener('fetch', function (event) {
@@ -74,10 +75,7 @@ self.addEventListener('fetch', function (event) {
 
 self.addEventListener('online', function (e) {
   console.log('EventListener: ONline');
-  // if(this.navigator.onLine) { 
-  //   console.log('EventListener: ONline');
-  //   //self.showSnackbarOnline();
-  // }
+
   var x = document.getElementById("snackbarOnline");
 
   // Add the "show" class to DIV
@@ -89,10 +87,7 @@ self.addEventListener('online', function (e) {
 
 self.addEventListener('offline', function (e) {
   console.log('EventListener: OFFline');
-  // if(!this.navigator.onLine) {
-  //   console.log('EventListener: OFFline');
-  //   //this.showSnackbarOffline();
-  // }
+
   // Get the snackbar DIV
   var x = document.getElementById("snackbarOffline");
   // Add the "show" class to DIV
@@ -102,17 +97,17 @@ self.addEventListener('offline', function (e) {
   setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
 });
 
-// function showSnackbarOnline() {
-//   console.log('Mostrando Snaackbar ONline');
-//   // Get the snackbar DIV
-//   var x = document.getElementById("snackbarOnline");
+function showSnackbarFilesCached() {
+  console.log('Mostrando Snackbar Files cacheados');
+  // Get the snackbar DIV
+  var x = document.getElementById("snackbarCachedFiles");
 
-//   // Add the "show" class to DIV
-//   x.className = "show";
+  // Add the "show" class to DIV
+  x.className = "show";
 
-//   // After 3 seconds, remove the show class from DIV
-//   setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-// }
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+}
 
 // function showSnackbarOffline() {
 //   console.log('Mostrando Snaackbar OFFline');
