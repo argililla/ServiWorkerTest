@@ -9,7 +9,7 @@
             // we are checking here to see if the browser supports the  service worker api
             window.addEventListener('load', function () {
                 navigator.serviceWorker.register('./service-worker.js').then(function (registration) {
-                //navigator.serviceWorker.register('${window.location.pathname}service-worker.js').then(function (registration) {
+                    //navigator.serviceWorker.register('${window.location.pathname}service-worker.js').then(function (registration) {
                     // Registration was successful
                     console.log('Service Worker registration was successful with scope: ', registration.scope);
                 }, function (err) {
@@ -17,11 +17,38 @@
                     console.log('ServiceWorker registration failed: ', err);
                 });
             });
+            // window.addEventListener('online', function (e) {
+            //     console.log('EventListener: status ONLINE');
+            //     // if(this.navigator.onLine) { 
+            //     //   console.log('EventListener: ONline');
+            //     //   //self.showSnackbarOnline();
+            //     // }
+            //     var x = document.getElementById("snackbarOnline");
+
+            //     // Add the "show" class to DIV
+            //     x.className = "show";
+
+            //     // After 3 seconds, remove the show class from DIV
+            //     setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+            // });
+
+            // window.addEventListener('offline', function (e) {
+            //     console.log('EventListener: status OFFLINE');
+            //     // if(!this.navigator.onLine) {
+            //     //   console.log('EventListener: OFFline');
+            //     //   //this.showSnackbarOffline();
+            //     // }
+            //     // Get the snackbar DIV
+            //     var x = document.getElementById("snackbarOffline");
+            //     // Add the "show" class to DIV
+            //     x.className = "show";
+            //     // After 3 seconds, remove the show class from DIV
+            //     setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+            // });
         }
     </script>
-    <script src="./scipts/toast.js"></script>
-    <link href="./css/toast.css" rel="stylesheet"/>
-    <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+    <link href="./css/snackbar.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
 </head>
 
 <body>
@@ -33,7 +60,7 @@
         Usted está aquí:
     </p>
     <p>
-        <img src="./img/folder-horizontal.png" /> / 
+        <img src="./img/folder-horizontal.png" /> /
         <b>index /</b>
         <a href="./subpage1.html">subpage1</a> /
         <a href="./subpage2.html">subpage2</a> /
@@ -45,20 +72,20 @@
             <a href="./files/DocumentoPrueba1.pdf">DESCARGA ARCHIVO Nº1 PDF</a>
         </p>
         <p>
-                <a href="./files/sp-airbus-leaflet-web.pdf">DESCARGA RESUMEN 2013 (3.6Mb) PDF</a>
-            </p>
-        
+            <a href="./files/sp-airbus-leaflet-web.pdf">DESCARGA RESUMEN 2013 (3.6Mb) PDF</a>
+        </p>
+
         <p>
             <a href="./files/Airbus-commercial-aircraft-corporate-presentation-EN.pdf">DESCARGA ARCHIVO GRANDE (7.6Mb)
-                 PDF</a>
+                PDF</a>
         </p>
-       
+
     </div>
 
     <!-- Snackbar de status -->
-<div id="snackbarOnline">Estamos ONLINE...</div>
+    <div id="snackbarOnline">Estamos ONLINE...</div>
 
-<div id="snackbarOffline">Estamos offline...</div>
+    <div id="snackbarOffline">Estamos OFFLINE...</div>
 </body>
 
 </html>
