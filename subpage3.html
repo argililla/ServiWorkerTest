@@ -4,6 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <title>SubPage 3</title>
+    <script>
+        window.addEventListener('online', function (e) {
+            console.log("Online");
+            showSnackbarStatus(0);
+        });
+
+        window.addEventListener('offline', function (e) {
+            console.log("Offline:");
+            showSnackbarStatus(1);
+        });
+
+        function showSnackbarStatus(status) {
+            console.log('EventListener:' + status);
+            if(status == 0) {
+                var x = document.getElementById("snackbarOnline");
+            } else {
+                var x = document.getElementById("snackbarOffline");
+            }
+            // Add the "show" class to DIV
+            x.className = "show";
+            // After 3 seconds, remove the show class from DIV
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 2000);
+        }
+
+</script>
+<link rel="stylesheet" type="text/css" href="./css/snackbar.css"/>
     <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
 </head>
 

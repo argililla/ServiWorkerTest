@@ -6,6 +6,7 @@ var resourcesToCache = [
   './subpage2.html',
   './subpage3.html',
   './subpage4.html',
+  './css/snackbar.css',
   './img/folder-horizontal.png',
   './img/mario.jpeg',
   './files/DocumentoPrueba1.pdf',
@@ -28,97 +29,73 @@ var resourcesToCache = [
   './files/DocumentoPrueba10.pdf'
 ];
 
+var document = typeof document === 'undefined' ? '' : document;
+
+
 self.addEventListener('install', function (event) {
   // install files needed offline
   event.waitUntil(
     caches.open(CACHE_NAME)
+      // .then(function () {
+      //   console.log('Comenzamos a descargar archivos a cache');
+      //   this.showSnackbarCacheFilesStatus("start");
+      // })
       .then(function (cache) {
         console.log('Opened cache');
-
         return cache.addAll(resourcesToCache);
       })
+      // .then(function () {
+      //   console.log('terminada la carga de archivos en cache');
+      //   this.showSnackbarCacheFilesStatus("end");
+      // })
   );
-      this.function.showSnackbarFilesCached();
-});
-
-self.addEventListener('fetch', function (event) {
-  // every request from our site, passes through the fetch handler
-  // I have proof
-  console.log('I am a request with url:', event.request.clone().url)
-  event.respondWith(
-    // check all the caches in the browser and find
-    // out whether our request is in any of them
-    caches.match(event.request)
-      .then(function (response) {
-        if (response) {
-          console.log('Found ', event.request.url, ' in cache');
-          // if we are here, that means there's a match
-          //return the response stored in browser
-          return response;
-        }
-        // no match in cache, use the network instead
-        console.log('Network request for ', event.request.url);
-        return fetch(event.request).then(function (response) {
-          if (response.status === 404) {
-            console.log("page not founf: Error 404");
-          }
-          return caches.open(resourcesToCache).then(function (cache) {
-            cache.put(event.request.url, response.clone());
+  })
+  self.addEventListener('fetch', function (event) {
+    // every request from our site, passes through the fetch handler
+    // I have proof
+    console.log('I am a request with url:', event.request.clone().url)
+    event.respondWith(
+      // check all the caches in the browser and find
+      // out whether our request is in any of them
+      caches.match(event.request)
+        .then(function (response) {
+          if (response) {
+            console.log('Found ', event.request.url, ' in cache');
+            // if we are here, that means there's a match
+            //return the response stored in browser
             return response;
+          }
+          // no match in cache, use the network instead
+          console.log('Network request for ', event.request.url);
+          return fetch(event.request).then(function (response) {
+            if (response.status === 404) {
+              console.log("page not founf: Error 404");
+            }
+            return caches.open(resourcesToCache).then(function (cache) {
+              cache.put(event.request.url, response.clone());
+              return response;
+            });
           });
-        });
-      }).catch(function (error) {
-        console.log('Error', error);
-      })
-  );
-});
+        }).catch(function (error) {
+          console.log('Error', error);
+        })
+    );
+  });
 
-self.addEventListener('online', function (e) {
-  console.log('EventListener: ONline');
+  function showSnackbarCacheFilesStatus(startEnd) {
+    if (startEnd == "start") {
+      // Get the snackbar DIV
+      var x = document.getElementById("snackbarCachingFiles");
+    } else {
+      var x = document.getElementById("snackbarCachedFiles");
+    }
+    console.log('Mostrando Snackbar Files cacheados');
+    // Add the "show" class to DIV
+    x.className = "show";
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function () { x.className = x.className.replace("show", ""); }, 2000);
+  }
 
-  var x = document.getElementById("snackbarOnline");
-
-  // Add the "show" class to DIV
-  x.className = "show";
-
-  // After 3 seconds, remove the show class from DIV
-  setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-});
-
-self.addEventListener('offline', function (e) {
-  console.log('EventListener: OFFline');
-
-  // Get the snackbar DIV
-  var x = document.getElementById("snackbarOffline");
-  // Add the "show" class to DIV
-  x.className = "show";
-
-  // After 3 seconds, remove the show class from DIV
-  setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-});
-
-function showSnackbarFilesCached() {
-  console.log('Mostrando Snackbar Files cacheados');
-  // Get the snackbar DIV
-  var x = document.getElementById("snackbarCachedFiles");
-
-  // Add the "show" class to DIV
-  x.className = "show";
-
-  // After 3 seconds, remove the show class from DIV
-  setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-}
-
-// function showSnackbarOffline() {
-//   console.log('Mostrando Snaackbar OFFline');
-//   // Get the snackbar DIV
-//   var x = document.getElementById("snackbarOffline");
-//   // Add the "show" class to DIV
-//   x.className = "show";
-
-//   // After 3 seconds, remove the show class from DIV
-//   setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-// }
 
   // 'use strict'
 
