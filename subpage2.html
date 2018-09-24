@@ -17,20 +17,24 @@
 
         function showSnackbarStatus(status) {
             console.log('EventListener:' + status);
+            var x = document.getElementById("snackbarStatus");
             if(status == 0) {
-                var x = document.getElementById("snackbarOnline");
+                //var x = document.getElementById("snackbarOnline");
+                x.className = "showOnline"
+                x.innerHTML = "STATUS: ONLINE"
             } else {
-                var x = document.getElementById("snackbarOffline");
+                //var x = document.getElementById("snackbarOffline");
+                x.className = "showOffline"
+                x.innerHTML = "STATUS: OFFLINE"
             }
             // Add the "show" class to DIV
-            x.className = "show";
+            //x.className = "show";
             // After 3 seconds, remove the show class from DIV
-            setTimeout(function () { x.className = x.className.replace("show", ""); }, 2000);
+            setTimeout(function () { x.className = x.className.replace("show.online" || "show.offline", ""); }, 2000);
         }
 
 </script>
 <link rel="stylesheet" type="text/css" href="./css/snackbar.css"/>
-    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
 </head>
 
 <body>
@@ -71,10 +75,10 @@
             <a href="./files/DocumentoPrueba6.pdf">DESCARGA ARCHIVO Nº6 PDF</a>
         </p>
     </div>
-    <!-- Snackbar de status -->
-    <div id="snackbarOnline">Estamos ONLINE...</div>
-
-    <div id="snackbarOffline">Estamos offline...</div>
+     <!-- Snackbar de status -->
+     <div id="snackbarStatus">...</div>
+     <!-- <div id="snackbarOnline">STATUS: ONLINE</div>
+     <div id="snackbarOffline">STATUS: OFFLINE</div> -->
 </body>
 
 </html>
