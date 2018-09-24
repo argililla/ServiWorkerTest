@@ -1,54 +1,4 @@
 /* The snackbar - position it at the bottom and in the middle of the screen */
-#snackbarOnline {
-    visibility: hidden; /* Hidden by default. Visible on click */
-    min-width: 250px; /* Set a default minimum width */
-    margin-left: -125px; /* Divide value of min-width by 2 */
-    background-color: green; /* Black background color */
-    color: #fff; /* White text color */
-    text-align: center; /* Centered text */
-    border-radius: 2px; /* Rounded borders */
-    padding: 16px; /* Padding */
-    position: fixed; /* Sit on top of the screen */
-    z-index: 1; /* Add a z-index if needed */
-    left: 50%; /* Center the snackbar */
-    bottom: 30px; /* 30px from the bottom */
-}
-
-/* Show the snackbar when clicking on a button (class added with JavaScript) */
-#snackbarOnline.show {
-    visibility: visible; /* Show the snackbar */
-    background-color: green;
-    /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
-   However, delay the fade out process for 2.5 seconds */
-   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-   animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-#snackbarOffline {
-    visibility: hidden; /* Hidden by default. Visible on click */
-    min-width: 250px; /* Set a default minimum width */
-    margin-left: -125px; /* Divide value of min-width by 2 */
-    background-color: red; /* Black background color */
-    color: #fff; /* White text color */
-    text-align: center; /* Centered text */
-    border-radius: 2px; /* Rounded borders */
-    padding: 16px; /* Padding */
-    position: fixed; /* Sit on top of the screen */
-    z-index: 1; /* Add a z-index if needed */
-    left: 50%; /* Center the snackbar */
-    bottom: 30px; /* 30px from the bottom */
-}
-
-/* Show the snackbar when clicking on a button (class added with JavaScript) */
-#snackbarOffline.show {
-    visibility: visible; /* Show the snackbar */
-    background-color: red;
-    /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
-   However, delay the fade out process for 2.5 seconds */
-   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-   animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
 #snackbarCachedFiles {
     visibility: hidden; /* Hidden by default. Visible on click */
     min-width: 250px; /* Set a default minimum width */
@@ -73,14 +23,14 @@
    animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-#snackbarStatus {
+#snackbarOnlineStatus {
     visibility: hidden; /* Hidden by default. Visible on click */
     min-width: 250px; /* Set a default minimum width */
     margin-left: -125px; /* Divide value of min-width by 2 */
     background-color: #fff;/*  Black background color */
     color: #fff; /* White text color */
     text-align: center; /* Centered text */
-    border-radius: 2px; /* Rounded borders */
+    border-radius: 10px; /* Rounded borders */
     padding: 16px; /* Padding */
     position: fixed; /* Sit on top of the screen */
     z-index: 1; /* Add a z-index if needed */
@@ -88,7 +38,7 @@
     bottom: 30px; /* 30px from the bottom */
 }
 /* Show the snackbar when clicking on a button (class added with JavaScript) */
-#snackbarStatus.showOnline {
+#snackbarOnlineStatus.showOnline {
     background-color: green; /* Black background color */
     visibility: visible; /* Show the snackbar */
     /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
@@ -97,8 +47,8 @@
    animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-#snackbarStatus.showOffline {
-    background-color: red; /* Black background color */
+#snackbarOnlineStatus.showOffline {
+    background-color: red;/*  Black background color */
     visibility: visible; /* Show the snackbar */
     /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
    However, delay the fade out process for 2.5 seconds */

@@ -17,20 +17,18 @@
 
         function showSnackbarStatus(status) {
             console.log('EventListener:' + status);
-            var x = document.getElementById("snackbarStatus");
+            var x = document.getElementById("snackbarOnlineStatus");
             if(status == 0) {
-                //var x = document.getElementById("snackbarOnline");
                 x.className = "showOnline"
                 x.innerHTML = "STATUS: ONLINE"
             } else {
-                //var x = document.getElementById("snackbarOffline");
                 x.className = "showOffline"
                 x.innerHTML = "STATUS: OFFLINE"
             }
             // Add the "show" class to DIV
             //x.className = "show";
             // After 3 seconds, remove the show class from DIV
-            setTimeout(function () { x.className = x.className.replace("show.online" || "show.offline", ""); }, 2000);
+            setTimeout(function () { x.className = x.className.replace("showOnline" || "showOffline", ""); }, 2000);
         }
 
 </script>
@@ -40,7 +38,7 @@
 <body>
     <div style="text-align:center; margin-top:40px;">
         <img src="./img/mario.jpeg" width="80" height="80" />
-        <p>Perfecto! Actualmente estamos <b>online</b>.</p>
+        <p>Perfecto! Actualmente estamos online.</p>
     </div>
     <div>
         <p>
@@ -64,7 +62,7 @@
         </p>
     </div>
     <!-- Snackbar de status -->
-    <div id="snackbarStatus">...</div>
+    <div id="snackbarOnlineStatus">...</div>
     <!-- <div id="snackbarOnline">STATUS: ONLINE</div>
     <div id="snackbarOffline">STATUS: OFFLINE</div> -->
 </body>
