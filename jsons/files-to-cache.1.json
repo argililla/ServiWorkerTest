@@ -1,0 +1,20 @@
+[
+    {"path": "./index.html" },
+    {"path": "./subpage1.html" },
+    {"path": "./subpage2.html"},
+    {"path": "./subpage3.html"},
+    {"path": "./subpage4.html"},
+    {"path": "./img/folder-horizontal.png"} ,
+    {"path": "./img/mario.jpeg"} ,
+    {"path": "./css/styles.css"} ,
+    {"path": "./files/ocDumentoPrueba1.pdf"} ,
+    {"path": "./files/DocumentoPrueba2.pdf"} ,
+    {"path": "./files/DocumentoPrueba3.pdf"} ,
+    {"path": "./files/DocumentoPrueba4.pdf"} ,
+    {"path": "./files/DocumentoPrueba5.pdf"} ,
+    {"path": "./files/DocumentoPrueba6.pdf"} ,
+    {"path": "./files/DocumentoPrueba7.pdf"} ,
+    {"path": "./files/DocumentoPrueba8.pdf"} ,
+    {"path": "./files/DocumentoPrueba9.pdf"} ,
+    {"path": "./files/DocumentoPrueba10.pdf"} 
+]

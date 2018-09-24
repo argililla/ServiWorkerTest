@@ -1,0 +1,24 @@
+{
+    "paths":
+    [
+      "./",
+      "./index.html",
+      "./subpage1.html",
+      "./subpage2.html",
+      "./subpage3.html",
+      "./subpage4.html",
+      "./img/folder-horizontal.png",
+      "./img/mario.jpeg",
+      "./css/styles.css",
+      "./files/ocDumentoPrueba1.pdf",
+      "./files/DocumentoPrueba2.pdf",
+      "./files/DocumentoPrueba3.pdf",
+      "./files/DocumentoPrueba4.pdf",
+      "./files/DocumentoPrueba5.pdf",
+      "./files/DocumentoPrueba6.pdf",
+      "./files/DocumentoPrueba7.pdf",
+      "./files/DocumentoPrueba8.pdf",
+      "./files/DocumentoPrueba9.pdf",
+      "./files/DocumentoPrueba10.pdf"
+  ]
+}
